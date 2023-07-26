@@ -1,0 +1,67 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  height: 30rem;
+  gap: 5px;
+  width: 20rem;
+  filter: drop-shadow(10px 10px 5px rgba(0, 0, 0, 0.2));
+  background-color: #087f5b99;
+
+  border-radius: 10px;
+}
+
+.submit {
+  display: flex;
+  align-items: center;
+
+  background-color: #0ca678;
+  border: none;
+  width: 6rem;
+  height: 2rem;
+  border-radius: 10px;
+  justify-content: center;
+  margin-left: 9.3rem;
+  font-family: "Roboto", sans-serif;
+  font-size: large;
+  color: white;
+}
+.submit:hover {
+  scale: 100px;
+  background-color: #20c997;
+
+  transition: 0.6s;
+}
+.submit:active {
+  transform: scale(0.8);
+}
+.input-box {
+  background-color: white;
+  border: none;
+  outline: none;
+  height: 1.5rem;
+  border-radius: 10px;
+  margin-right: 0.2rem;
+}
+.name-password {
+  display: flex;
+  justify-content: center;
+}
+.labels {
+  width: 6rem;
+  font-family: "Roboto", sans-serif;
+  color: white;
+}
+.container--input {
+  display: flex;
+}
+.container--login {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-left: 2rem;
+}
+.eye--icon {
+  color: white;
+}
