@@ -2,14 +2,12 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-
   height: 30rem;
-  gap: 5px;
   width: 20rem;
   filter: drop-shadow(10px 10px 5px rgba(0, 0, 0, 0.2));
   background-color: #087f5b99;
 
-  border-radius: 10px;
+  border-radius: 15px;
 }
 
 .submit {
@@ -22,7 +20,7 @@
   height: 2rem;
   border-radius: 10px;
   justify-content: center;
-  margin-left: 9.3rem;
+  margin: 0.3rem 0 0 9.3rem;
   font-family: "Roboto", sans-serif;
   font-size: large;
   color: white;
@@ -30,6 +28,7 @@
 .submit:hover {
   scale: 100px;
   background-color: #20c997;
+  cursor: pointer;
 
   transition: 0.6s;
 }
@@ -43,6 +42,10 @@
   height: 1.5rem;
   border-radius: 10px;
   margin-right: 0.2rem;
+  color: #393c43;
+}
+.input-box:hover {
+  background-color: #ffffffb3;
 }
 .name-password {
   display: flex;
