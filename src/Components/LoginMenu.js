@@ -12,9 +12,34 @@ const LoginMenu = () => {
     name: "",
     password: "",
   });
-  const noRefresh = (e) => {
+
+  const noRefresh = async (e) => {
     e.preventDefault();
+    try {
+      const response = await fetch("http://localhost:3000/user/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          username: input.name,
+          password: input.password,
+        }),
+      });
+
+      if (response.ok) {
+        // User successfully added to the database
+        // You can now redirect the user to the desired page or show a success message.
+      } else {
+        // Handle errors, such as duplicate username, etc.
+        // You can redirect the user back to the login page with an error message.
+      }
+    } catch (error) {
+      console.error("Error adding user:", error);
+      // Handle other errors, such as network errors.
+    }
   };
+
   // const handleChange = (e) => {
   //   if (e.target.name === "name") {
   //     setInputName(e.target.value);
