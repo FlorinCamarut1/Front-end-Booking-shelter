@@ -10,7 +10,7 @@
   border-radius: 15px;
 }
 
-.submit {
+.btn {
   display: flex;
   align-items: center;
 
@@ -20,19 +20,19 @@
   height: 2rem;
   border-radius: 10px;
   justify-content: center;
-  margin: 0.3rem 0 0 9.3rem;
+  margin: 0.3rem 0 0 1.7rem;
   font-family: "Roboto", sans-serif;
   font-size: large;
   color: white;
 }
-.submit:hover {
+.btn:hover {
   scale: 100px;
   background-color: #20c997;
   cursor: pointer;
 
   transition: 0.6s;
 }
-.submit:active {
+.btn:active {
   transform: scale(0.8);
 }
 .input-box {
@@ -67,4 +67,7 @@
 }
 .eye--icon {
   color: white;
+}
+.btn--box {
+  display: flex;
 }

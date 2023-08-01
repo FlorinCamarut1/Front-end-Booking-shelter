@@ -36,9 +36,13 @@
     transform: rotate(360deg);
   }
 }
-.backgound-iamge {
-  position: absolute;
-  overflow-y: hidden;
-  height: 100vh;
+.backgound-image {
+  display: flex;
+  background-image: url("../public/fog-gc436ea590_1920.jpg");
+  background-size: cover;
+  background-position: center;
   width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
 }
