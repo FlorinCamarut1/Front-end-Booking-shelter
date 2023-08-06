@@ -3,6 +3,7 @@ import "./LoginMenu.css";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import { useNavigate } from "react-router-dom";
+import { makeFetchRequest } from "../Utils/ApiFetch";
 
 const LoginMenu = () => {
   const [showEye, setShowEye] = useState(false);
@@ -20,31 +21,49 @@ const LoginMenu = () => {
   };
   const loginCheck = async (e) => {
     e.preventDefault();
-    try {
-      const response = await fetch("http://localhost:3000/user/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          username: input.name,
-          password: input.password,
-        }),
-      });
-
-      if (response.status === 200) {
-        navigate("/landing");
-        // User successfully added to the database
-        // You can now redirect the user to the desired page or show a success message.
-      } else {
-        alert("User or password incorrect");
-        // Handle errors, such as duplicate username, etc.
-        // You can redirect the user back to the login page with an error message.
-      }
-    } catch (error) {
-      console.error("Error adding user:", error);
-      // Handle other errors, such as network errors.
+    let data = await makeFetchRequest("user/login", "POST", {
+      username: input.name,
+      password: input.password,
+    });
+    if (localStorage.getItem("username") === null) {
+      localStorage.setItem("username", JSON.stringify(data));
     }
+    navigate("/landing");
+    // try {
+    //   const response = await fetch("http://localhost:3000/user/login", {
+    //     method: "POST", // *GET, POST, PUT, DELETE, etc.
+    //     mode: "cors", // no-cors, *cors, same-origin
+    //     cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+    //     credentials: "same-origin", // include, *same-origin, omit
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //       // 'Content-Type': 'application/x-www-form-urlencoded',
+    //     },
+    //     redirect: "follow", // manual, *follow, error
+    //     referrerPolicy: "no-referrer",
+    //     body: JSON.stringify({
+    //       username: input.name,
+    //       password: input.password,
+    //     }),
+    //   });
+    //   response.json().then((data) => {
+    //     if (response.status === 200) {
+    //       if (localStorage.getItem("username") === null) {
+    //         localStorage.setItem("username", JSON.stringify(data));
+    //         navigate("/landing");
+    //       }
+    //       // User successfully added to the database
+    //       // You can now redirect the user to the desired page or show a success message.
+    //     } else {
+    //       alert("User or password incorrect");
+    //       // Handle errors, such as duplicate username, etc.
+    //       // You can redirect the user back to the login page with an error message.
+    //     }
+    //   });
+    // } catch (error) {
+    //   console.error("Error adding user:", error);
+    //   // Handle other errors, such as network errors.
+    // }
   };
 
   // const handleChange = (e) => {
@@ -76,10 +95,10 @@ const LoginMenu = () => {
   }, [input.name, input.password]);
 
   return (
-    <form className="layout">
-      <div className="container--login">
-        <div className="container--input">
-          <label className="labels">UserName</label>
+    <div className="body-img">
+      <form className="layout">
+        <div className="container--inputUsr">
+          <label className="labels">Username</label>
 
           <input
             className="input-box"
@@ -89,7 +108,7 @@ const LoginMenu = () => {
             onChange={handleChange}
           ></input>
         </div>
-        <div className="container--input">
+        <div className="container--inputPass">
           <label className="labels">Password</label>
           <input
             className="input-box"
@@ -119,8 +138,8 @@ const LoginMenu = () => {
             Submit
           </button>
         </div>
-      </div>
-    </form>
+      </form>
+    </div>
   );
 };
 

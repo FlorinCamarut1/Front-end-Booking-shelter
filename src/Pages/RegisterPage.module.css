@@ -8,20 +8,37 @@
   color: white;
   width: 6rem;
   font-family: "Roboto", sans-serif;
-  margin-right: 1rem;
 }
 .labelPas {
   color: white;
-  width: 5rem;
+  width: 6rem;
   font-family: "Roboto", sans-serif;
-  margin-left: 2rem;
 }
 .input {
   border: none;
   height: 1.5rem;
   border-radius: 10px;
 }
+/* go back btn and submit container*/
 .containerSubGob {
   margin-left: -0.4rem;
   display: flex;
+}
+.containerLabelInputUsr {
+  display: flex;
+}
+.containerLabelInputPas {
+  display: flex;
+  margin-left: 1.5rem;
+}
+.bodyImage {
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  background-image: url("../../public/fog-gc436ea590_1920.jpg");
+  background-size: cover;
+  background-position: center;
+  text-decoration: none;
 }

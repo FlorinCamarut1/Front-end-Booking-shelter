@@ -89,49 +89,51 @@ const RegisterPage = () => {
   }, [input.name, input.password]);
 
   return (
-    <form className="layout">
-      <div className={styles.containerReg}>
-        <div className="">
-          <label className={styles.labelUsr}>Username</label>
-          <input
-            className={styles.input}
-            type="text"
-            name="name"
-            value={input.name}
-            onChange={createAcc}
-          />
-        </div>
-        <div className="container--input">
-          <label className={styles.labelPas}>Password</label>
-          <input
-            className={styles.input}
-            type={showEye ? "text" : "password"}
-            name="password"
-            value={input.password}
-            onChange={createAcc}
-          />
-          {showEye ? (
-            <VisibilityIcon
-              className="eye--icon"
-              onClick={() => setShowEye(false)}
+    <div className={styles.bodyImage}>
+      <form className="layout">
+        <div className={styles.containerReg}>
+          <div className={styles.containerLabelInputUsr}>
+            <label className={styles.labelUsr}>Username</label>
+            <input
+              className={styles.input}
+              type="text"
+              name="name"
+              value={input.name}
+              onChange={createAcc}
             />
-          ) : (
-            <VisibilityOffIcon
-              className="eye--icon"
-              onClick={() => setShowEye(true)}
+          </div>
+          <div className={styles.containerLabelInputPas}>
+            <label className={styles.labelPas}>Password</label>
+            <input
+              className={styles.input}
+              type={showEye ? "text" : "password"}
+              name="password"
+              value={input.password}
+              onChange={createAcc}
             />
-          )}
+            {showEye ? (
+              <VisibilityIcon
+                className="eye--icon"
+                onClick={() => setShowEye(false)}
+              />
+            ) : (
+              <VisibilityOffIcon
+                className="eye--icon"
+                onClick={() => setShowEye(true)}
+              />
+            )}
+          </div>
+          <div className={styles.containerSubGob}>
+            <button onClick={goBack} className="btn">
+              Go back
+            </button>
+            <button onClick={registerHandler} className="btn">
+              Submit
+            </button>
+          </div>
         </div>
-        <div className={styles.containerSubGob}>
-          <button onClick={goBack} className="btn">
-            Go back
-          </button>
-          <button onClick={registerHandler} className="btn">
-            Submit
-          </button>
-        </div>
-      </div>
-    </form>
+      </form>
+    </div>
   );
 };
 
