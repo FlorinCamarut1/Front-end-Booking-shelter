@@ -6,9 +6,9 @@
   filter: drop-shadow(10px 5px 10px rgba(0, 0, 0, 0.2));
   border-radius: 10px;
   gap: 5rem;
-  margin: 0 auto 0 auto;
+  margin: 0 auto 2rem 6rem;
 
-  color: white;
+  color: #087f5b;
 }
 .image {
   width: 350px;
@@ -19,7 +19,7 @@
 .button {
   display: flex;
   border: none;
-  height: 3rem;
+  height: 2.5rem;
   width: 6rem;
   justify-content: center;
   align-items: center;

@@ -23,7 +23,10 @@ const Map = () => {
         center={center}
         mapContainerClassName={styles.mapContainer}
       >
-        <Marker position={{ lat: 46, lng: 25 }} />
+        <Marker
+          label="Refugiul Stâna de Râu"
+          position={{ lat: 45.37060469837035, lng: 22.9366697185442 }}
+        />
       </GoogleMap>
     </LandingPage>
   );

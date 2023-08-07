@@ -19,7 +19,7 @@ const DatePickerComp = () => {
           <DatePicker
             slotProps={{
               field: {
-                inputProps: { style: { color: "#fff" } },
+                inputProps: { style: { color: "#087f5b" } },
               },
             }}
             defaultValue={today}
@@ -32,7 +32,7 @@ const DatePickerComp = () => {
             className="icon"
             slotProps={{
               textField: {
-                inputProps: { style: { color: "#fff" } },
+                inputProps: { style: { color: "#087f5b" } },
               },
             }}
             defaultValue={today}
