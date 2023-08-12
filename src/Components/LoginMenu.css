@@ -1,0 +1,84 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  height: 30rem;
+  width: 20rem;
+  filter: drop-shadow(10px 10px 5px rgba(0, 0, 0, 0.2));
+  background-color: #087f5b99;
+
+  border-radius: 15px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+
+  background-color: #0ca678;
+  border: none;
+  width: 6rem;
+  height: 2rem;
+  border-radius: 10px;
+  justify-content: center;
+  margin: 0.3rem 0 0 1.7rem;
+  font-family: "Roboto", sans-serif;
+  font-size: large;
+  color: white;
+}
+.btn:hover {
+  scale: 100px;
+  background-color: #20c997;
+  cursor: pointer;
+
+  transition: 0.6s;
+}
+.btn:active {
+  transform: scale(0.8);
+}
+.input-box {
+  background-color: white;
+  border: none;
+  outline: none;
+  height: 1.5rem;
+  border-radius: 10px;
+  margin-right: 0.2rem;
+  color: #393c43;
+}
+.input-box:hover {
+  background-color: #ffffffb3;
+}
+.name-password {
+  display: flex;
+  justify-content: center;
+}
+.labels {
+  width: 6rem;
+  font-family: "Roboto", sans-serif;
+  color: white;
+}
+.container--inputUsr {
+  display: flex;
+  margin-right: 1.4rem;
+}
+.container--inputPass {
+  display: flex;
+}
+
+.eye--icon {
+  color: white;
+}
+.btn--box {
+  display: flex;
+}
+.body-img {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../../public/tree-nature-forest-grass-wilderness-light-1092473-pxhere.com.jpg");
+  background-size: cover;
+  background-position: center;
+}
