@@ -4,6 +4,9 @@ import styles from "./RegisterPage.module.css";
 import { useNavigate } from "react-router-dom";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+import { makeFetchRequest } from "../Utils/ApiFetch";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const RegisterPage = () => {
   const [showEye, setShowEye] = useState(false);
@@ -39,37 +42,28 @@ const RegisterPage = () => {
    */
   const registerHandler = async (e) => {
     e.preventDefault();
+    let data = await makeFetchRequest("user/adduser", "POST", {
+      username: input.name,
+      password: input.password,
+      age: Math.trunc(Math.random() * 50),
+    });
 
-    try {
-      const response = await fetch("http://localhost:3000/user/adduser", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          username: input.name,
-          password: input.password,
-          age: Math.trunc(Math.random() * 50),
-        }),
-      });
-
-      if (response.status === 200) {
-        alert("Account created successfully");
-        // User successfully added to the database
-        // You can now redirect the user to the desired page or show a success message.
-      } else if (response.status === 400) {
-        alert(
-          "Username and password cannot be empty: Enter a valid username and password"
-        );
-        // Handle errors, such as duplicate username, etc.
-        // You can redirect the user back to the login page with an error message.
-      } else if (response.status === 409) {
-        alert("User already exists");
-      }
-    } catch (error) {
-      alert("Error adding user: " + error);
-      // Handle other errors, such as network errors.
-    }
+    // try {
+    //   const response = await fetch("http://localhost:3000/user/adduser", {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify({
+    //       username: input.name,
+    //       password: input.password,
+    //       age: Math.trunc(Math.random() * 50),
+    //     }),
+    //   });
+    // } catch (error) {
+    //   alert("Error adding user: " + error);
+    //   // Handle other errors, such as network errors.
+    // }
   };
   /**
    * subbmit on pressing enter.
@@ -90,6 +84,7 @@ const RegisterPage = () => {
 
   return (
     <div className={styles.bodyImage}>
+      <ToastContainer />
       <form className="layout">
         <div className={styles.containerReg}>
           <div className={styles.containerLabelInputUsr}>

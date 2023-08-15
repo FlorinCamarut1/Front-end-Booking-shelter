@@ -1,5 +1,6 @@
 .body {
   display: flex;
+
   width: 50rem;
   height: 25rem;
   background-color: white;
@@ -24,9 +25,37 @@
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  margin: 1rem 0 1rem auto;
+
   color: white;
   background-color: #0ca678;
   font-family: "Roboto", sans-serif;
   font-size: medium;
+}
+.button:hover {
+  scale: 100px;
+  background-color: #20c997;
+  cursor: pointer;
+
+  transition: 0.6s;
+}
+.button:active {
+  transform: scale(0.8);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+  height: 20rem;
+}
+.btnRegContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0 0.5rem 0;
+}
+.region {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

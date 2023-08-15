@@ -147,7 +147,8 @@ const MiniDrawer = () => {
               marginRight: 5,
             }}
           >
-            Mini variant drawer
+            {"Welcome " +
+              JSON.parse(localStorage.getItem("username"))[0].username}
           </Typography>
           {/* SEARCH BAR */}
           <TextField

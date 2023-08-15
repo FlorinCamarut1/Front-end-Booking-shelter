@@ -4,6 +4,8 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import { useNavigate } from "react-router-dom";
 import { makeFetchRequest } from "../Utils/ApiFetch";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const LoginMenu = () => {
   const [showEye, setShowEye] = useState(false);
@@ -96,6 +98,7 @@ const LoginMenu = () => {
 
   return (
     <div className="body-img">
+      <ToastContainer />
       <form className="layout">
         <div className="container--inputUsr">
           <label className="labels">Username</label>
