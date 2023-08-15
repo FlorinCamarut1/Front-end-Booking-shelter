@@ -3,3 +3,10 @@
   height: 35rem;
   border-radius: 10px;
 }
+.image {
+  width: 220px;
+  height: 200px;
+  border-radius: 10px;
+  display: flex;
+  margin-bottom: 5px;
+}
